@@ -66,13 +66,13 @@ movie_data = pd.read_csv("./tmdb-movies.csv")
 # In[2]:
 
 
-# print(movie_data.shape)
+print(movie_data.shape)
 print(movie_data.head())
-# print(movie_data.tail())
-# print(movie_data.sample())
-# print(movie_data.dtypes)
-# print(movie_data.isnull().any())
-# print(movie_data.describe)
+print(movie_data.tail())
+print(movie_data.sample())
+print(movie_data.dtypes)
+print(movie_data.isnull().any())
+print(movie_data.describe)
 
 
 # ---
@@ -86,7 +86,10 @@ print(movie_data.head())
 # In[3]:
 
 
-movie_data.fillna(0, inplace = True)
+# print(movie_data.isnull().any())
+# movie_data.info()
+# movie_data.describe()
+movie_data.fillna('Unknown', inplace = True)
 # print(movie_data.isnull().any())
 
 
@@ -115,8 +118,12 @@ movie_data.fillna(0, inplace = True)
 
 
 movie_data[['id','popularity','budget','runtime','vote_average']]
-movie_data.iloc[0:20]
-movie_data.iloc[47:49]
+ls_temp = []
+for i in range(0,20,1):
+    ls_temp.append(i)
+ls_temp.append(48)
+ls_temp.append(49)
+movie_data.iloc[ls_temp]
 movie_data.iloc[49:60]['popularity']
 
 
@@ -189,14 +196,16 @@ plt.show()
 # ---
 # **任务3.2：**分析电影净利润（票房-成本）随着年份变化的情况，并简单进行分析。
 
-# In[17]:
+# In[14]:
 
 
 movie_temp2 = movie_data.loc[:,['release_year','budget_adj','revenue_adj']]
-temp = movie_temp2.groupby('release_year').agg({'revenue_adj':['sum'], 'budget_adj':['sum']})
+temp = movie_temp2.groupby('release_year').agg({'revenue_adj':['mean'], 'budget_adj':['mean']})
 plt.plot(temp.index.tolist(), temp['revenue_adj'] - temp['budget_adj'], marker='o', mec='r', mfc='w')
+plt.ylabel('average net profit')
+plt.xlabel('release_year')
 plt.show()
-# 在1960~2010之间，电影行业整体上处于一个快速的增长阶段。虽然在某些个别年份有下降的趋势。
+# 在1960~2010之间，电影的数量有了很大的增长，电影行业的利润趋于稳定。
 
 
 # ---
