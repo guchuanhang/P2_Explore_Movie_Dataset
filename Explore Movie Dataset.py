@@ -121,8 +121,8 @@ movie_data[['id','popularity','budget','runtime','vote_average']]
 ls_temp = []
 for i in range(0,20,1):
     ls_temp.append(i)
+ls_temp.append(47)
 ls_temp.append(48)
-ls_temp.append(49)
 movie_data.iloc[ls_temp]
 movie_data.iloc[49:60]['popularity']
 
@@ -196,7 +196,7 @@ plt.show()
 # ---
 # **任务3.2：**分析电影净利润（票房-成本）随着年份变化的情况，并简单进行分析。
 
-# In[14]:
+# In[8]:
 
 
 movie_temp2 = movie_data.loc[:,['release_year','budget_adj','revenue_adj']]

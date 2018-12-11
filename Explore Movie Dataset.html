@@ -12015,26 +12015,23 @@ div#notebook {
 10865         15           1.5          1966  127642.279154          0.0  
 
 [5 rows x 21 columns]
-         id    imdb_id  popularity  budget  revenue     original_title  \
-7944  15239  tt0090190    0.335414       0        0  The Toxic Avenger   
+         id    imdb_id  popularity   budget  revenue original_title  \
+7968  23730  tt0087015    0.197425  1250000  3412497       C.H.U.D.   
 
                                                    cast homepage  \
-7944  Mitch Cohen|Andree Maranda|Jennifer Prichard|C...      NaN   
+7968  John Heard|Daniel Stern|Christopher Curry|Kim ...      NaN   
 
-                        director  \
-7944  Lloyd Kaufman|Michael Herz   
-
-                                             tagline     ...       \
-7944  He was 98lbs. of solid nerd until he became...     ...        
+           director                                  tagline      ...       \
+7968  Douglas Cheek  They&#39;re not staying down there anymore!      ...        
 
                                                overview runtime  \
-7944  Tromaville has a monstrous new hero. The Toxic...      82   
+7968  A rash of bizarre murders in New York City see...      88   
 
-                                    genres production_companies release_date  \
-7944  Science Fiction|Action|Comedy|Horror  Troma Entertainment       5/1/84   
+                      genres production_companies release_date vote_count  \
+7968  Horror|Science Fiction   New World Pictures      8/31/84         22   
 
-     vote_count  vote_average  release_year  budget_adj  revenue_adj  
-7944         51           6.2          1984         0.0          0.0  
+      vote_average  release_year    budget_adj   revenue_adj  
+7968           4.5          1984  2.623803e+06  7.162975e+06  
 
 [1 rows x 21 columns]
 id                        int64
@@ -12785,8 +12782,8 @@ dtype: bool
 <span class="n">ls_temp</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">1</span><span class="p">):</span>
     <span class="n">ls_temp</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<span class="n">ls_temp</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">47</span><span class="p">)</span>
 <span class="n">ls_temp</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">48</span><span class="p">)</span>
-<span class="n">ls_temp</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">49</span><span class="p">)</span>
 <span class="n">movie_data</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">ls_temp</span><span class="p">]</span>
 <span class="n">movie_data</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">49</span><span class="p">:</span><span class="mi">60</span><span class="p">][</span><span class="s1">&#39;popularity&#39;</span><span class="p">]</span>
 </pre></div>
@@ -14576,7 +14573,7 @@ Name: popularity, Length: 5068, dtype: float64</pre>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[14]:</div>
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">movie_temp2</span> <span class="o">=</span> <span class="n">movie_data</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,[</span><span class="s1">&#39;release_year&#39;</span><span class="p">,</span><span class="s1">&#39;budget_adj&#39;</span><span class="p">,</span><span class="s1">&#39;revenue_adj&#39;</span><span class="p">]]</span>
